@@ -4,6 +4,11 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import java.time.LocalDate;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.Past;
 
 @Entity
 public class Passenger
@@ -11,12 +16,22 @@ public class Passenger
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @NotBlank(message = "Name cannot be empty")
     private String name;
+    @NotBlank(message = "Email cannot be empty")
+    @Email(message = "Enter a valid email address")
     private String email;
+    @NotBlank(message = "Password cannot be empty")
+    @Size(min = 6, message = "Password must contain at least 6 characters")
     private String password;
+    @NotBlank(message = "Phone number cannot be empty")
+    @Pattern(regexp = "^[0-9]{10}$", message = "Phone number must contain exactly 10 digits")
     private String phoneNumber;
+    @Past(message = "Date of birth must be in the past")
     private LocalDate dateOfBirth;
+    @NotBlank(message = "ID proof type cannot be empty")
     private String idProofType;
+    @NotBlank(message = "ID proof number cannot be empty")
     private String idProofNumber;
     public Passenger()
     {

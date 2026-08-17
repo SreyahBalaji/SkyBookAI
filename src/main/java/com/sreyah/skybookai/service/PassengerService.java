@@ -4,6 +4,8 @@ import com.sreyah.skybookai.entity.Passenger;
 
 import java.util.List;
 import java.util.Optional;
+
+import com.sreyah.skybookai.exception.PassengerNotFoundException;
 import com.sreyah.skybookai.repository.PassengerRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,8 +21,7 @@ public class PassengerService
     }
     public Passenger getPassengerById(Long id)
     {
-        Optional<Passenger> passenger = passengerRepository.findById(id);
-        return passenger.get();
+        return passengerRepository.findById(id).orElseThrow(() -> new PassengerNotFoundException("Passenger not found with id: " + id));
     }
     @GetMapping("/passengers")
     public List<Passenger> getAllPassengers()
@@ -42,6 +43,11 @@ public class PassengerService
     }
     public void deletePassenger(Long id)
     {
+        if (!passengerRepository.existsById(id))
+        {
+            throw new PassengerNotFoundException(
+                    "Passenger not found with id: " + id);
+        }
+
         passengerRepository.deleteById(id);
-    }
-}
+    }}
