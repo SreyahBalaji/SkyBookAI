@@ -1,5 +1,6 @@
 package com.sreyah.skybookai.controller;
 
+import com.sreyah.skybookai.dto.PassengerResponseDTO;
 import com.sreyah.skybookai.entity.Passenger;
 import com.sreyah.skybookai.service.PassengerService;
 
@@ -25,17 +26,20 @@ public class PassengerController {
     }
 
     @GetMapping("/passengers/{id}")
-    public ResponseEntity<Passenger> getPassengerById(@PathVariable Long id)
+    public ResponseEntity<PassengerResponseDTO> getPassengerById(
+            @PathVariable Long id)
     {
-        Passenger passenger = passengerService.getPassengerById(id);
+        PassengerResponseDTO passenger =
+                passengerService.getPassengerResponseById(id);
 
         return new ResponseEntity<>(passenger, HttpStatus.OK);
     }
 
     @GetMapping("/passengers")
-    public ResponseEntity<List<Passenger>> getAllPassengers()
+    public ResponseEntity<List<PassengerResponseDTO>> getAllPassengers()
     {
-        List<Passenger> passengers = passengerService.getAllPassengers();
+        List<PassengerResponseDTO> passengers =
+                passengerService.getAllPassengerResponses();
 
         return new ResponseEntity<>(passengers, HttpStatus.OK);
     }

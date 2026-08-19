@@ -10,6 +10,7 @@ import com.sreyah.skybookai.repository.PassengerRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import com.sreyah.skybookai.dto.PassengerResponseDTO;
 
 @Service
 public class PassengerService
@@ -50,4 +51,33 @@ public class PassengerService
         }
 
         passengerRepository.deleteById(id);
-    }}
+    }
+    public PassengerResponseDTO getPassengerResponseById(Long id)
+    {
+        Passenger passenger = passengerRepository.findById(id)
+                .orElseThrow(() -> new PassengerNotFoundException(
+                        "Passenger not found with id: " + id));
+
+        return new PassengerResponseDTO(
+                passenger.getId(),
+                passenger.getName(),
+                passenger.getEmail(),
+                passenger.getPhoneNumber(),
+                passenger.getIdProofType()
+        );
+    }
+    public List<PassengerResponseDTO> getAllPassengerResponses()
+    {
+        List<Passenger> passengers = passengerRepository.findAll();
+
+        return passengers.stream()
+                .map(passenger -> new PassengerResponseDTO(
+                        passenger.getId(),
+                        passenger.getName(),
+                        passenger.getEmail(),
+                        passenger.getPhoneNumber(),
+                        passenger.getIdProofType()
+                ))
+                .toList();
+    }
+}
