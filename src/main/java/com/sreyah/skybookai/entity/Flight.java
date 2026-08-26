@@ -4,7 +4,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Positive;
+import jakarta.validation.constraints.PositiveOrZero;
 import java.time.LocalDateTime;
 
 @Entity
@@ -13,17 +15,28 @@ public class Flight
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    @NotBlank(message = "Flight number cannot be empty")
     private String flightNumber;
+
+    @NotBlank(message = "Airline cannot be empty")
     private String airline;
+
+    @NotBlank(message = "Source cannot be empty")
     private String source;
+
+    @NotBlank(message = "Destination cannot be empty")
     private String destination;
     private LocalDateTime departureTime;
-    private LocalDateTime arrivalTime;
-    private double price;
-    private int totalSeats;
-    private int availableSeats;
 
+    private LocalDateTime arrivalTime;
+    @Positive(message = "Price must be greater than zero")
+    private double price;
+
+    @Positive(message = "Total seats must be greater than zero")
+    private int totalSeats;
+
+    @PositiveOrZero(message = "Available seats cannot be negative")
+    private int availableSeats;
     public Flight()
     {
     }
