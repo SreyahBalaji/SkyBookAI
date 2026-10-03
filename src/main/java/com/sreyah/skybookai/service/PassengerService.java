@@ -1,5 +1,5 @@
 package com.sreyah.skybookai.service;
-
+import org.springframework.security.crypto.password.PasswordEncoder;
 import com.sreyah.skybookai.entity.Passenger;
 
 import java.util.List;
@@ -15,9 +15,19 @@ import com.sreyah.skybookai.dto.PassengerResponseDTO;
 @Service
 public class PassengerService
 {
+
     @Autowired
     private PassengerRepository passengerRepository;
-    public Passenger savePassenger(Passenger passenger){
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+    public Passenger savePassenger(Passenger passenger)
+    {
+        passenger.setPassword(
+                passwordEncoder.encode(
+                        passenger.getPassword()
+                )
+        );
+
         return passengerRepository.save(passenger);
     }
     public Passenger getPassengerById(Long id)

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | SkyBookAI</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+    <a href="/" class="logo">SkyBookAI</a>
+
+    <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/search-flights">Flights</a>
+        <a href="/login">Login</a>
+    </div>
+</nav>
+
+<div class="auth-page">
+
+    <div class="auth-card">
+
+        <h1>Create Account</h1>
+        <p class="subtitle">
+            Create your SkyBookAI passenger account.
+        </p>
+
+        <form id="registerForm">
+
+            <label>Name</label>
+            <input
+                    type="text"
+                    id="registerName"
+                    required>
+
+            <label>Email</label>
+            <input
+                    type="email"
+                    id="registerEmail"
+                    required>
+
+            <label>Password</label>
+            <input
+                    type="password"
+                    id="registerPassword"
+                    minlength="6"
+                    required>
+
+            <label>Phone Number</label>
+            <input
+                    type="text"
+                    id="registerPhone"
+                    maxlength="10"
+                    required>
+
+            <label>Date of Birth</label>
+            <input
+                    type="date"
+                    id="registerDob"
+                    required>
+
+            <label>ID Proof Type</label>
+
+            <select id="registerIdType" required>
+                <option value="">
+                    Select ID Proof
+                </option>
+
+                <option value="Aadhaar">
+                    Aadhaar
+                </option>
+
+                <option value="Passport">
+                    Passport
+                </option>
+
+                <option value="Driving Licence">
+                    Driving Licence
+                </option>
+            </select>
+
+            <label>ID Proof Number</label>
+            <input
+                    type="text"
+                    id="registerIdNumber"
+                    required>
+
+            <button
+                    type="submit"
+                    class="primary-button full-button">
+                Create Account
+            </button>
+
+        </form>
+
+        <div id="registerMessage"
+             class="form-message">
+        </div>
+
+        <p class="auth-switch">
+            Already registered?
+            <a href="/login">Login</a>
+        </p>
+
+    </div>
+
+</div>
+
+<script src="/js/app.js"></script>
+
+</body>
+</html>

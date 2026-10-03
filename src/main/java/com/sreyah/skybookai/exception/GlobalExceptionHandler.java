@@ -7,12 +7,22 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
-
+import com.sreyah.skybookai.exception.BookingNotFoundException;
 import java.util.HashMap;
 import java.util.Map;
 @RestControllerAdvice
 public class GlobalExceptionHandler
 {
+    @ExceptionHandler(BookingNotFoundException.class)
+    public ResponseEntity<String>
+    handleBookingNotFoundException(
+            BookingNotFoundException exception)
+    {
+        return new ResponseEntity<>(
+                exception.getMessage(),
+                HttpStatus.NOT_FOUND
+        );
+    }
     @ExceptionHandler(PassengerNotFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
     public Map<String, String> handlePassengerNotFoundException(
@@ -49,6 +59,16 @@ public class GlobalExceptionHandler
         return new ResponseEntity<>(
                 exception.getMessage(),
                 HttpStatus.NOT_FOUND
+        );
+    }
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity<String>
+    handleIllegalArgumentException(
+            IllegalArgumentException exception)
+    {
+        return new ResponseEntity<>(
+                exception.getMessage(),
+                HttpStatus.BAD_REQUEST
         );
     }
 }

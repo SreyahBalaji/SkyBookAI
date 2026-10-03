@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Flights | SkyBookAI</title>
+
+    <link rel="stylesheet"
+          href="/css/style.css">
+
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <a href="/" class="logo">
+        SkyBookAI
+    </a>
+
+    <div class="nav-links">
+
+        <a href="/">Home</a>
+
+        <a href="/search-flights">
+            Flights
+        </a>
+
+        <a href="/my-trips">
+            My Trips
+        </a>
+
+        <a href="/login"
+           id="loginNav">
+            Login
+        </a>
+
+        <button
+                class="logout-button"
+                id="logoutButton"
+                onclick="logout()">
+
+            Logout
+
+        </button>
+
+    </div>
+
+</nav>
+
+
+<main class="page-container">
+
+    <div class="page-heading">
+
+        <h1>Find your flight</h1>
+
+        <p>
+            Search available SkyBookAI flights.
+        </p>
+
+    </div>
+
+
+    <div class="flight-search-box">
+
+        <div>
+
+            <label>From</label>
+
+            <input
+                    type="text"
+                    id="flightSource"
+                    placeholder="Bangalore">
+
+        </div>
+
+        <div>
+
+            <label>To</label>
+
+            <input
+                    type="text"
+                    id="flightDestination"
+                    placeholder="Delhi">
+
+        </div>
+
+        <button
+                class="primary-button"
+                onclick="searchFlights()">
+
+            Search Flights
+
+        </button>
+
+    </div>
+
+
+    <div id="flightMessage"
+         class="form-message">
+    </div>
+
+
+    <div id="flightResults"
+         class="flight-results">
+    </div>
+
+</main>
+
+
+<script src="/js/app.js"></script>
+
+</body>
+</html>

@@ -27,6 +27,10 @@ public class FlightService
 
         return flightRepository.save(flight);
     }
+    public Flight saveExistingFlight(Flight flight)
+    {
+        return flightRepository.save(flight);
+    }
     public Flight getFlightById(Long id)
     {
         return flightRepository.findById(id)

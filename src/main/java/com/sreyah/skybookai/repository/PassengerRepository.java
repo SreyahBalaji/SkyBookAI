@@ -3,6 +3,12 @@ package com.sreyah.skybookai.repository;
 import com.sreyah.skybookai.entity.Passenger;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface PassengerRepository extends JpaRepository<Passenger, Long> {
+import java.util.Optional;
 
+public interface PassengerRepository
+        extends JpaRepository<Passenger, Long>
+{
+    Optional<Passenger> findByEmailIgnoreCase(String email);
+
+    boolean existsByEmailIgnoreCase(String email);
 }

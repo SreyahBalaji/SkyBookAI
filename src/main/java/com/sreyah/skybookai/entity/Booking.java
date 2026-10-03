@@ -1,6 +1,7 @@
 package com.sreyah.skybookai.entity;
 
 import jakarta.persistence.*;
+
 import java.time.LocalDateTime;
 
 @Entity
@@ -10,6 +11,7 @@ public class Booking
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(unique = true, nullable = false)
     private String bookingReference;
 
     private String seatNumber;
@@ -17,13 +19,15 @@ public class Booking
     private LocalDateTime bookingTime;
 
     private String bookingStatus;
+
     @ManyToOne
-    @JoinColumn(name = "passenger_id")
+    @JoinColumn(name = "passenger_id", nullable = false)
     private Passenger passenger;
 
     @ManyToOne
-    @JoinColumn(name = "flight_id")
+    @JoinColumn(name = "flight_id", nullable = false)
     private Flight flight;
+
     public Booking()
     {
     }
@@ -77,6 +81,7 @@ public class Booking
     {
         this.bookingStatus = bookingStatus;
     }
+
     public Passenger getPassenger()
     {
         return passenger;

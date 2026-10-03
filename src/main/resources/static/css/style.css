@@ -1,0 +1,740 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f6f8fc;
+    color: #172033;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+
+/* NAVIGATION */
+
+.navbar {
+    min-height: 75px;
+    background: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 7%;
+
+    border-bottom: 1px solid #e6eaf0;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #315bea;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: #293448;
+    text-decoration: none;
+}
+
+.nav-button,
+.primary-button {
+    background: #315bea;
+    color: white !important;
+
+    border: none;
+
+    padding: 12px 20px;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+.logout-button {
+    border: 1px solid #d8deea;
+    background: white;
+
+    padding: 9px 15px;
+
+    border-radius: 7px;
+}
+
+
+/* HOME */
+
+.hero {
+    min-height: 520px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 70px 8%;
+
+    background:
+            linear-gradient(
+                    120deg,
+                    #eef3ff,
+                    #ffffff
+            );
+}
+
+.hero-content {
+    width: 100%;
+    max-width: 1050px;
+}
+
+.tag {
+    color: #315bea;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-size: 55px;
+
+    max-width: 650px;
+
+    line-height: 1.08;
+
+    margin-bottom: 20px;
+}
+
+.hero-description {
+    font-size: 18px;
+    color: #657085;
+
+    max-width: 550px;
+
+    line-height: 1.6;
+}
+
+.search-card {
+    background: white;
+
+    margin-top: 40px;
+
+    padding: 20px;
+
+    border-radius: 14px;
+
+    display: flex;
+    align-items: end;
+
+    gap: 15px;
+
+    max-width: 850px;
+
+    box-shadow:
+            0 15px 40px rgba(0,0,0,0.08);
+}
+
+.search-field {
+    flex: 1;
+}
+
+.search-field label,
+.auth-card label,
+.flight-search-box label {
+    display: block;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    margin-bottom: 7px;
+}
+
+.search-field input,
+.auth-card input,
+.auth-card select,
+.flight-search-box input,
+.seat-section input {
+    width: 100%;
+
+    padding: 13px;
+
+    border: 1px solid #dce2ec;
+
+    border-radius: 8px;
+
+    outline: none;
+
+    background: white;
+}
+
+.search-field input:focus,
+.auth-card input:focus,
+.auth-card select:focus,
+.flight-search-box input:focus,
+.seat-section input:focus {
+    border-color: #315bea;
+}
+
+.swap {
+    font-size: 22px;
+    padding-bottom: 10px;
+}
+
+.search-card button {
+    background: #315bea;
+    color: white;
+
+    border: none;
+
+    padding: 14px 25px;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+}
+
+
+/* FEATURES */
+
+.features {
+    padding: 70px 8%;
+
+    background: white;
+}
+
+.features h2 {
+    text-align: center;
+
+    font-size: 32px;
+
+    margin-bottom: 40px;
+}
+
+.feature-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.feature-card {
+    padding: 28px;
+
+    border: 1px solid #e5e9f0;
+
+    border-radius: 12px;
+
+    background: white;
+}
+
+.feature-card h3 {
+    margin-bottom: 12px;
+}
+
+.feature-card p {
+    color: #687387;
+
+    line-height: 1.6;
+}
+
+
+/* AUTH */
+
+.auth-page {
+    min-height:
+            calc(100vh - 75px);
+
+    display: flex;
+
+    justify-content: center;
+
+    padding: 60px 20px;
+}
+
+.auth-card {
+    background: white;
+
+    width: 100%;
+    max-width: 470px;
+
+    height: fit-content;
+
+    padding: 35px;
+
+    border-radius: 14px;
+
+    box-shadow:
+            0 10px 35px rgba(0,0,0,0.07);
+}
+
+.auth-card h1 {
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    color: #6c7689;
+
+    margin-bottom: 25px;
+
+    line-height: 1.5;
+}
+
+.auth-card label {
+    margin-top: 15px;
+}
+
+.full-button {
+    width: 100%;
+
+    margin-top: 25px;
+}
+
+.auth-switch {
+    text-align: center;
+
+    margin-top: 25px;
+}
+
+.auth-switch a {
+    color: #315bea;
+}
+
+.form-message {
+    margin-top: 18px;
+
+    line-height: 1.6;
+
+    color: #475269;
+}
+
+
+/* GENERAL PAGE */
+
+.page-container {
+    width: 90%;
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 50px 0;
+}
+
+.page-heading {
+    margin-bottom: 30px;
+}
+
+.page-heading h1 {
+    font-size: 34px;
+
+    margin-bottom: 8px;
+}
+
+.page-heading p {
+    color: #687387;
+}
+
+
+/* FLIGHT SEARCH */
+
+.flight-search-box {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr auto;
+
+    align-items: end;
+
+    gap: 15px;
+
+    background: white;
+
+    padding: 22px;
+
+    border-radius: 12px;
+
+    border: 1px solid #e4e8ef;
+
+    margin-bottom: 25px;
+}
+
+.flight-results,
+.trip-results {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 16px;
+}
+
+.flight-card,
+.trip-card {
+    background: white;
+
+    border: 1px solid #e3e8ef;
+
+    border-radius: 12px;
+
+    padding: 24px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    align-items: center;
+}
+
+.flight-card h3,
+.trip-card h3 {
+    margin: 10px 0;
+}
+
+.flight-card p,
+.trip-card p {
+    color: #687387;
+
+    margin: 6px 0;
+}
+
+.airline {
+    font-weight: bold;
+}
+
+.flight-number {
+    color: #687387;
+
+    margin-left: 8px;
+}
+
+.flight-price {
+    text-align: right;
+
+    min-width: 140px;
+}
+
+.flight-price h2 {
+    margin-bottom: 15px;
+}
+
+
+/* BOOKING */
+
+.booking-container {
+    background: white;
+
+    max-width: 800px;
+
+    margin: auto;
+
+    padding: 35px;
+
+    border-radius: 14px;
+
+    border: 1px solid #e4e8ef;
+}
+
+.selected-flight {
+    margin: 25px 0;
+}
+
+.seat-section {
+    margin: 30px 0;
+}
+
+.seat-section h2 {
+    margin-bottom: 8px;
+}
+
+.seat-section p {
+    color: #687387;
+
+    margin-bottom: 15px;
+}
+
+.seat-section input {
+    max-width: 250px;
+}
+
+
+/* TRIPS */
+
+.status-badge {
+    display: inline-block;
+
+    padding: 6px 10px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    margin-bottom: 12px;
+}
+
+.status-badge.confirmed {
+    background: #e8f7ee;
+    color: #237642;
+}
+
+.status-badge.cancelled {
+    background: #fceaea;
+    color: #a73434;
+}
+
+.danger-button {
+    background: white;
+
+    border: 1px solid #d75050;
+
+    color: #b43b3b;
+
+    padding: 10px 15px;
+
+    border-radius: 7px;
+}
+
+
+/* AI */
+
+.ai-chat-button {
+    position: fixed;
+
+    right: 25px;
+    bottom: 25px;
+
+    width: 58px;
+    height: 58px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #315bea;
+
+    color: white;
+
+    font-weight: bold;
+
+    box-shadow:
+            0 8px 25px rgba(0,0,0,0.2);
+
+    z-index: 1000;
+}
+
+.ai-chat-window {
+    display: none;
+
+    position: fixed;
+
+    right: 25px;
+    bottom: 95px;
+
+    width: 350px;
+    height: 470px;
+
+    background: white;
+
+    border-radius: 14px;
+
+    box-shadow:
+            0 15px 45px rgba(0,0,0,0.2);
+
+    overflow: hidden;
+
+    z-index: 999;
+}
+
+.ai-chat-window.open {
+    display: flex;
+
+    flex-direction: column;
+}
+
+.ai-header {
+    background: #315bea;
+
+    color: white;
+
+    padding: 16px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.ai-header small {
+    display: block;
+
+    margin-top: 3px;
+
+    opacity: 0.85;
+}
+
+.ai-header button {
+    border: none;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 25px;
+}
+
+.ai-messages {
+    flex: 1;
+
+    overflow-y: auto;
+
+    padding: 15px;
+
+    background: #f8f9fc;
+}
+
+.ai-message {
+    max-width: 85%;
+
+    padding: 10px 12px;
+
+    margin-bottom: 10px;
+
+    border-radius: 10px;
+
+    line-height: 1.45;
+
+    white-space: pre-wrap;
+}
+
+.ai-message.bot {
+    background: white;
+
+    border: 1px solid #e3e7ef;
+}
+
+.ai-message.user {
+    background: #315bea;
+
+    color: white;
+
+    margin-left: auto;
+}
+
+.ai-input-area {
+    display: flex;
+
+    padding: 10px;
+
+    border-top: 1px solid #e4e8ef;
+}
+
+.ai-input-area input {
+    flex: 1;
+
+    border: 1px solid #dce1ea;
+
+    padding: 10px;
+
+    border-radius: 7px 0 0 7px;
+
+    outline: none;
+}
+
+.ai-input-area button {
+    border: none;
+
+    background: #315bea;
+
+    color: white;
+
+    padding: 0 14px;
+
+    border-radius: 0 7px 7px 0;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 800px) {
+
+    .navbar {
+        padding: 18px 5%;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 13px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .search-card {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .swap {
+        display: none;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .flight-search-box {
+        grid-template-columns: 1fr;
+    }
+
+    .flight-card,
+    .trip-card {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .flight-price {
+        text-align: left;
+    }
+
+    .ai-chat-window {
+        width:
+                calc(100% - 30px);
+
+        right: 15px;
+
+        bottom: 85px;
+    }
+}

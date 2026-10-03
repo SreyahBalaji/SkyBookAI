@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Book Flight | SkyBookAI</title>
+
+    <link rel="stylesheet"
+          href="/css/style.css">
+
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <a href="/" class="logo">
+        SkyBookAI
+    </a>
+
+    <div class="nav-links">
+
+        <a href="/">Home</a>
+
+        <a href="/search-flights">
+            Flights
+        </a>
+
+        <a href="/my-trips">
+            My Trips
+        </a>
+
+        <button
+                class="logout-button"
+                onclick="logout()">
+
+            Logout
+
+        </button>
+
+    </div>
+
+</nav>
+
+
+<main class="page-container">
+
+    <div class="booking-container">
+
+        <h1>Complete your booking</h1>
+
+        <p class="subtitle">
+            Review your flight and choose your seat.
+        </p>
+
+
+        <div id="selectedFlight"
+             class="selected-flight">
+
+            Loading flight...
+
+        </div>
+
+
+        <div class="seat-section">
+
+            <h2>Choose your seat</h2>
+
+            <p>
+                Enter your preferred seat number.
+            </p>
+
+            <input
+                    type="text"
+                    id="seatNumber"
+                    placeholder="Example: 12A">
+
+        </div>
+
+
+        <button
+                class="primary-button"
+                onclick="confirmBooking()">
+
+            Confirm Booking
+
+        </button>
+
+
+        <div id="bookingMessage"
+             class="form-message">
+        </div>
+
+    </div>
+
+</main>
+
+
+<script src="/js/app.js"></script>
+
+</body>
+</html>

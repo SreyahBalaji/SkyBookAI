@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>SkyBookAI</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <div class="logo">
+        SkyBookAI
+    </div>
+
+    <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/search-flights">Flights</a>
+        <a href="/my-trips">My Trips</a>
+        <a href="/login">Login</a>
+
+        <a href="/register"
+           class="nav-button">
+            Register
+        </a>
+    </div>
+
+</nav>
+
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <p class="tag">
+            SMARTER AIR TRAVEL
+        </p>
+
+        <h1>
+            Where do you want
+            to fly next?
+        </h1>
+
+        <p class="hero-description">
+            Search flights, compare prices,
+            book your seat and manage your
+            journey with SkyBookAI.
+        </p>
+
+        <div class="search-card">
+
+            <div class="search-field">
+                <label>From</label>
+
+                <input
+                        id="homeSource"
+                        type="text"
+                        placeholder="Bangalore">
+            </div>
+
+            <div class="swap">
+                ⇄
+            </div>
+
+            <div class="search-field">
+                <label>To</label>
+
+                <input
+                        id="homeDestination"
+                        type="text"
+                        placeholder="Delhi">
+            </div>
+
+            <button onclick="searchFromHome()">
+                Search Flights
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="features">
+
+    <h2>
+        Travel made simple.
+    </h2>
+
+    <div class="feature-grid">
+
+        <div class="feature-card">
+            <h3>Search</h3>
+
+            <p>
+                Find available flights for
+                your destination.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Compare</h3>
+
+            <p>
+                Compare airlines, timings
+                and ticket prices.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Book</h3>
+
+            <p>
+                Choose your seat and receive
+                your booking confirmation.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Ask SkyBookAI</h3>
+
+            <p>
+                Get quick assistance with
+                flights and bookings.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<script src="/js/app.js"></script>
+
+</body>
+</html>
